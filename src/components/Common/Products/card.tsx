@@ -15,7 +15,7 @@ export default function ProductCard({ product }: { product: Product }) {
         alt={product.name}
         width={500}
         height={300}
-        className="object-cover h-48 w-full"
+				className="rounded-t-lg"
 				/>
 			</Link>
 			<Link href={`/product/${product.id}`}>

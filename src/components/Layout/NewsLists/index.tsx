@@ -3,22 +3,13 @@
 import { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import useSWR from 'swr'
-import ProductCard from '../../Common/Products/card'
-import ProductSkeleton from '../../Common/Products/skeleton'
+import ProductCardOne from '@/components/Common/Products/cardone'
+import { Product } from '@/types/products'
 
-const fetcher = (url: string) => fetch(url).then(res => res.json())
 
-export default function ProductGrid() {
-  const [page, setPage] = useState(1);
-  // const { data, error } = useSWR(`/api/products?page=${page}`, fetcher);
-  const [ref, inView] = useInView();
+export default function NewsLists() {
 
-  useEffect(() => {
-    if (inView) {
-      setPage((prev) => prev + 1);
-    }
-  }, [inView]);
-  const productsTest = [
+	const productsTest = [
     {
       id: 1,
       name: "Product 1",
@@ -112,17 +103,18 @@ export default function ProductGrid() {
 
   ];
 
+
   // const products = data ? [].concat(...data) : []
 
   const products = productsTest;
 
   return (
-    <>
+    <div className='my-10'>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCardOne key={product.id} product={product} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

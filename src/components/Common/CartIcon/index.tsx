@@ -11,7 +11,7 @@ export default function CartIcon() {
 	return (
 		<Link href={'/cart'} passHref>
 		<Badge count={totalQuantity} offset={[10, 0]}>
-			<ShoppingCartOutlined style={{ fontSize: '24px', cursor: 'pointer' }} />
+			<ShoppingCartOutlined style={{ fontSize: '24px', cursor: 'pointer', color:'#e53697' }} />
 		</Badge>
 		</Link>
 	);

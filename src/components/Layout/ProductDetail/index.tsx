@@ -48,8 +48,10 @@ export default function ProductDetail() {
 				price: product.price,
 				description: product.description,
 				quantity: quantity + 1,
-				image: product.gallery[0].url,
-				name: product.title
+				imageUrl: product.gallery[0].url,
+				name: product.title,
+				rating: 4.5,
+				reviews: 15,
 			});
 		}
 	};

@@ -7,7 +7,7 @@ import "@/styles/globals.css";
 import "@/styles/antd-overrides.css";
 
 export const metadata: Metadata = {
-  title: "Ftanails",
+  title: "FTAnails",
   description: "",
 };
 
