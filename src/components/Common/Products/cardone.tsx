@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Product } from "@/types/products";
 import Link from "next/link";
-import QuestCard from "@/components/UI/QuestCart";
+import QuestCart from "@/components/UI/QuestCart";
 
 
 export default function ProductCardOne({ product }: { product: Product }) {
@@ -34,7 +34,7 @@ export default function ProductCardOne({ product }: { product: Product }) {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-xl font-bold text-fta-primary-500 dark:text-white">${product.price}</span>
-            <QuestCard product={product} />
+            <QuestCart product={product} />
           </div>
         </div>
       </div>

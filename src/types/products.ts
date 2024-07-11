@@ -8,3 +8,9 @@ export type Product = {
 	rating: number;
 	reviews: number;
 }
+
+export type Category = {
+	id: number;
+	title: string;
+
+}

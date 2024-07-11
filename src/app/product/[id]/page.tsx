@@ -9,7 +9,7 @@ export default function Detail({ params }: { params: { id: string } }) {
 	const { id } = useParams();
 
 	return (
-		<div className="relative mx-auto max-w-c-1440 mt-25 items-center justify-between align-items:flex-end px-4 md:px-8 2xl:px-0">
+		<div className="relative mx-auto max-w-c-1440 my-5 items-center justify-between align-items:flex-end px-4 md:px-8 2xl:px-0">
 			<ProductDetailPage />
 		</div>
 	);
