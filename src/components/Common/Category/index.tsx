@@ -20,7 +20,7 @@ export default function Category() {
 	}]
 
   return (
-		<div className='flex flex-wrap gap-4 mb-5'>
+		<div className='flex flex-wrap gap-4 mt-8'>
 		{
 				categoryList.map((category) => (
 					<CategoryItem key={category.id} item={{ ...category, description: '', image: '', createdAt: new Date(), updatedAt: new Date() }} />

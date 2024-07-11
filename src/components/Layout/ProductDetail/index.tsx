@@ -1,7 +1,7 @@
 // pages/product/[id].tsx
 
-import React, { useEffect, useRef  } from 'react';
-import { Button, Carousel,  Rate, Tag, } from 'antd';
+import React, { useEffect, useRef } from 'react';
+import { Button, Carousel, Divider, Rate, Tag, } from 'antd';
 import { useProductStore } from '@/stores/useProductStore';
 import QuestCart from "@/components/UI/QuestCart";
 import { useCartStore } from '@/stores/useCartStore';
@@ -39,25 +39,25 @@ const ProductData: Product = {
 	],
 	image: "/products/000.jpg",
 	reviews: [
-    {
-      username: 'Darrell Steward',
-      rating: 5,
-      comment: 'This is an amazing product I have.',
-      createdAt: 'July 2, 2020 03:29 PM',
-      likes: 128,
-      dislikes: 3,
-      profileImage: 'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png',
-    },
-    {
-      username: 'Darlene Robertson',
-      rating: 5,
-      comment: 'This is an amazing product I have.',
-      createdAt: 'July 2, 2020 10:04 PM',
-      likes: 82,
-      dislikes: 1,
-      profileImage: 'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png',
-    },
-  ],
+		{
+			username: 'Darrell Steward',
+			rating: 5,
+			comment: 'This is an amazing product I have.',
+			createdAt: 'July 2, 2020 03:29 PM',
+			likes: 128,
+			dislikes: 3,
+			profileImage: 'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png',
+		},
+		{
+			username: 'Darlene Robertson',
+			rating: 5,
+			comment: 'This is an amazing product I have.',
+			createdAt: 'July 2, 2020 10:04 PM',
+			likes: 82,
+			dislikes: 1,
+			profileImage: 'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png',
+		},
+	],
 	details: "This is a detailed description of the product. It includes information about its features, benefits, and usage.",
 	specifications: [
 		{ key: "Brand", value: "Kenmore" },
@@ -113,7 +113,7 @@ export default function ProductDetail() {
 	}, [selectedImageIndex]);
 
 	return (
-		<div className="container mx-auto">
+		<div className="container mx-auto mb-18">
 			<div className="flex flex-col md:flex-row">
 				<div className="w-full md:w-1/2">
 					<Carousel ref={carouselRef} afterChange={setSelectedImageIndex}>
@@ -185,7 +185,7 @@ export default function ProductDetail() {
 								</Link>
 							</div>
 							<div className="flex mt-4">
-          </div>
+							</div>
 						</div>
 					)}
 
@@ -206,19 +206,16 @@ export default function ProductDetail() {
 				</div>
 				<div className="lg:w-1/2 px-4 lg:visible xl:visible sm:invisible sx:invisible">
 
-				<CatagoryListOfDetails />
-					
+					<CatagoryListOfDetails />
+
 
 				</div>
 			</div>
 
-			<div>
+			<Divider />
 
-				<DetailsRecommendList />
+			<DetailsRecommendList />
 
-
-
-			</div>
 		</div>
 	);
 }

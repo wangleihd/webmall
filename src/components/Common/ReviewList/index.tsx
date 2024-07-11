@@ -46,7 +46,6 @@ export default function ReviewList({ reviews }: { reviews: Review[] }) {
 						</List.Item>
 					)}
 				/>
-				<Divider />
 			</div>
 		</div>
 	)
