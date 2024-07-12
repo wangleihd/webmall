@@ -6,7 +6,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from '@/components/Common/pay/CheckoutForm';
 import CartListItem from '@/components/Common/CartListItem';
-import '@/styles/pay.css'
+import '@/styles/pay.css';
+import ShoppingCartList from '@/components/Common/ShoppingCartList';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
@@ -40,7 +41,6 @@ export default function Cart() {
 		appearance,
 	};
 
-
 	return (
 		<div className="relative mx-auto max-w-c-1440 my-5 items-center justify-between align-items:flex-end px-4 md:px-8 2xl:px-0">
 
@@ -50,34 +50,10 @@ export default function Cart() {
 					<div className="bg-white sm:rounded-lg p-6 text-center">
 						<p className="text-3xl lg:h-96">Your cart is empty</p>
 					</div>
-
 				</div>
 			) : (
-				<div className="space-y-4">
-					{items.map((item) => <CartListItem key={item.id} item={item} />)}
-				</div>
+				<ShoppingCartList items={items} />
 			)}
-			{items.length > 0 && (
-				<Row justify="space-between" className="py-4">
-					<Col>
-						<Typography.Title level={4}>Total:</Typography.Title>
-					</Col>
-					<Col>
-						<Typography.Title level={4}>
-							${(totalAmount / 100).toFixed(2)}
-						</Typography.Title>
-					</Col>
-				</Row>
-			)}
-			<div className="mb-8">
-				{items.length > 0 && (
-						<button onClick={handleCheckout}
-							className="w-full text-white bg-fta-primary-500 hover:bg-fta-primary-600 focus:ring-4 focus:outline-none focus:ring-fta-primary-300 font-bold rounded-lg text-sm text-center"
-						>
-							Proceed to Checkout
-						</button>
-				)}
-			</div>
 
 			<div className='mb-8'>
 				{clientSecret && (
@@ -89,5 +65,3 @@ export default function Cart() {
 		</div>
 	);
 }
-
-

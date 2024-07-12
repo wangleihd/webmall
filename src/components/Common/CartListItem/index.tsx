@@ -2,44 +2,44 @@
 import React from 'react';
 import Image from 'next/image';
 import { useCartStore } from '@/stores/useCartStore';
-import { CartItem as CartItemType } from '@/types/stores/cart';
 import QuantityControl from '@/components/UI/QuestCart';
 import { CartItem } from '@/types/stores/cart';
+import { CloseCircleOutlined, CloseOutlined } from '@ant-design/icons';
 
-interface CartItemProps {
-  item: CartItemType;
-}
+export default function CartListItem({ item }: { item: CartItem }) {
+	const removeItem = useCartStore((state) => state.removeItem);
 
-export default function CartListItem ({ item }: {item: CartItem}) {
-  const removeItem = useCartStore((state) => state.removeItem);
-
-  return (
-    <div className="flex items-center justify-between p-4 border-b border-gray-200">
-      <div className="flex items-center">
-        <Image
-          src={item.imageUrl}
-          alt={item.name}
-          width={80}
-          height={80}
-          className="rounded-lg"
-        />
-        <div className="ml-4">
-          <h5 className="text-lg font-semibold text-fta-blake1">{item.name}</h5>
-          <p className="text-sm t-text-fta-blake2">{item.description}</p>
-          <div className="mt-2">
-            <QuantityControl product={item} />
-          </div>
-        </div>
-      </div>
-      <div className="flex items-center">
-        <span className="text-lg font-bold text-fta-primary-500 mr-4">${item.price * item.quantity}</span>
-        <button
-          onClick={() => removeItem(item.id)}
-          className="text-fta-blake bg-fta-accent6 hover:bg-fta-accent5 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5"
-        >
-          Remove
-        </button>
-      </div>
-    </div>
-  );
+	return (
+		<div className="flex flex-col md:flex-row items-center justify-between py-4 px-0  md:p-4 border-b border-gray-200">
+			<div className="flex flex-col md:flex-row w-full md:w-auto items-center">
+				<Image
+					src={item.imageUrl}
+					alt={item.name}
+					width={96}
+					height={96}
+					className="rounded-lg w-full object-cover"
+				/>
+				<div className="md:mx-4 w-full text-left">
+					<h5 className="my-2 md:my-0 text-lg font-semibold text-fta-blake1">{item.name}</h5>
+					<p className="mb-2 md:mb-0 text-sm text-gray-500">{item.description}</p>
+				</div>
+			</div>
+			<div className="flex justify-between items-end">
+				<div className='md:w-28 w-36'>
+					<div className="text-lg font-bold text-fta-primary-500">${item.price * item.quantity}</div>
+					<div className="mt-1">
+						<QuantityControl product={item} />
+					</div>
+				</div>
+				<div className='md:w-8 w-36'>
+					<div
+						onClick={() => removeItem(item.id)}
+						className="text-gray-500 hover:text-fta-primary-500 text-right text-3xl"
+					>
+						<CloseCircleOutlined />
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
