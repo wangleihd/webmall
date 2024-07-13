@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Header />
           {children}
         <Footer />
+				<SpeedInsights />
       </body>
     </html>
   );
