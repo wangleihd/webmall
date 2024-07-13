@@ -5,7 +5,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <>
-      <footer className="border-t border-stroke bg-slate-50">
+      <footer className="border-t border-stroke bg-fta-back">
         <div className="mx-auto max-w-c-1440 px-4 md:px-8 2xl:px-0">
           {/* <!-- Footer Top --> */}
           <div className="py-10 lg:py-15">
@@ -30,16 +30,16 @@ const Footer = () => {
               >
                 <a href="index.html" className="relative">
                   <Image
-                    width={160}
-                    height={50}
-                    src="/images/logo/ftanlogo.png"
+                    width={280}
+                    height={100}
+                    src="/images/logo/logo.png"
                     alt="Logo"
                     className="dark:hidden"
                   />
                   <Image
                     width={160}
                     height={50}
-                    src="/images/logo/ftanlogo.png"
+                    src="/images/logo/logo.png"
                     alt="Logo"
                     className="hidden dark:block"
                   />
@@ -56,7 +56,7 @@ const Footer = () => {
                   href="#"
                   className="text-itemtitle font-medium text-black dark:text-white"
                 >
-                  perternails@gmail.com
+                  FingertipArtistry@gmail.com
                 </a>
               </motion.div>
 
