@@ -1,144 +1,172 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-
-
-import { AudioOutlined } from '@ant-design/icons';
-import { Input, Space } from 'antd';
-import type { SearchProps } from 'antd/es/input/Search';
+'use client'
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Avatar, Drawer} from 'antd';
+import { MenuUnfoldOutlined } from '@ant-design/icons';
 import CartIcon from "@/components/Common/CartIcon";
 
-const { Search } = Input;
+export default function Header() {
+	const [isOpen, setIsOpen] = useState(false);
+	const [open, setOpen] = useState(false);
+	const [islogin, setLogin] = useState(false);
 
-const suffix = (
-	<AudioOutlined
-		style={{
-			fontSize: 16,
-			color: '#1677ff',
-		}}
-	/>
-)
-
-const onSearch: SearchProps['onSearch'] = (value, _e, info) => console.log(info?.source, value);
-
-
-const Header = () => {
-	const [navigationOpen, setNavigationOpen] = useState(false);
-	const [dropdownToggler, setDropdownToggler] = useState(false);
-	const [stickyMenu, setStickyMenu] = useState(false);
-
-	const pathUrl = usePathname();
-
-	// Sticky menu
-	const handleStickyMenu = () => {
-		if (window.scrollY >= 80) {
-			setStickyMenu(true);
-		} else {
-			setStickyMenu(false);
-		}
+	const showDrawer = () => {
+		setOpen(true);
+		toggleMenu();
 	};
 
-	useEffect(() => {
-		window.addEventListener("scroll", handleStickyMenu);
-	});
+	const onClose = () => {
+		setOpen(false);
+		toggleMenu();
+	};
+
+	const toggleMenu = () => {
+		setIsOpen(!isOpen);
+	};
+
+	const onLogin = () => {
+		setLogin(true);
+	};
 
 	return (
-		<header
-			className={`left-0 top-0 z-99999 w-full py-4 border-b ${stickyMenu
-					? "bg-white !py-4 shadow transition duration-100 dark:bg-black"
-					: ""
-				}`}
-		>
-			<div className="relative mx-auto max-w-c-1440 items-center justify-between align-items:flex-end px-4 md:px-8 xl:flex 2xl:px-0">
-				<div className="flex w-full items-center justify-between xl:w-1/4">
-					<div className="flex items-end justify-between">
-						<Link href="/">
-							<Image
-								src="/images/logo/hlogo.png"
-								alt="logo"
-								width={48}
-								height={48}
-								className="w-full"
-							/>
-						</Link>
-						<div className="text-lg text-fta-primary-500">
-							<span className="text-2xl">F</span>inger<span className="text2xl">T</span>ip<span className="text-xl">A</span>ristry
-						</div>
-					</div>
+		<header className="flex border-b py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50">
 
-					{/* <!-- Hamburger Toggle BTN --> */}
-					<button
-						aria-label="hamburger Toggler"
-						className="block xl:hidden"
-						onClick={() => setNavigationOpen(!navigationOpen)}
-					>
-						<span className="relative block h-5.5 w-5.5 cursor-pointer">
-							<span className="absolute right-0 block h-full w-full">
-								<span
-									className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white ${!navigationOpen ? "!w-full delay-300" : "w-0"
-										}`}
-								></span>
-								<span
-									className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white ${!navigationOpen ? "delay-400 !w-full" : "w-0"
-										}`}
-								></span>
-								<span
-									className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white ${!navigationOpen ? "!w-full delay-500" : "w-0"
-										}`}
-								></span>
-							</span>
-							<span className="du-block absolute right-0 h-full w-full rotate-45">
-								<span
-									className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white ${!navigationOpen ? "!h-0 delay-[0]" : "h-full"
-										}`}
-								></span>
-								<span
-									className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white ${!navigationOpen ? "!h-0 delay-200" : "h-0.5"
-										}`}
-								></span>
-							</span>
-						</span>
-					</button>
-					{/* <!-- Hamburger Toggle BTN --> */}
+			<div className="mx-auto max-w-c-1440 flex flex-wrap justify-between items-center gap-2 w-full">
+
+				<Link href="/">
+					<div className='flex justify-center text-fta-primary-500 items-end'>
+						<Image src="/images/logo/hlogo.png" alt="logo" width={48} height={48} />
+						<span className='text-lg'>F</span>inger
+						<span className='text-lg'>T</span>ip
+						<span className='text-lg'>A</span>rtistry
+					</div>
+				</Link>
+
+				<div id="collapseMenu"
+					className="hidden max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:h-full max-lg:bg-white max-lg:z-50 transition-transform duration-300 transform lg:flex lg:ml-14 lg:gap-x-5">
+					<ul className="lg:flex max-lg:space-y-8 max-lg:p-6">
+						<li className="max-lg:border-b max-lg:py-3 px-3">
+							<a href="javascript:void(0)" className="lg:hover:text-[#007bff] text-[#007bff] block font-semibold text-[15px]">
+								Home
+							</a>
+						</li>
+						<li className="max-lg:border-b max-lg:py-3 px-3">
+							<a href="javascript:void(0)" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
+								Team
+							</a>
+						</li>
+						<li className="max-lg:border-b max-lg:py-3 px-3">
+							<a href="javascript:void(0)" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
+								Feature
+							</a>
+						</li>
+						<li className="max-lg:border-b max-lg:py-3 px-3">
+							<a href="javascript:void(0)" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
+								Blog
+							</a>
+						</li>
+						<li className="max-lg:border-b max-lg:py-3 px-3">
+							<a href="javascript:void(0)" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
+								About
+							</a>
+						</li>
+					</ul>
 				</div>
 
-				{/* Nav Menu Start   */}
-				<div
-					className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${navigationOpen &&
-						"navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
-						}`}
-				>
-					<nav>
-						<Search placeholder="input search text" allowClear onSearch={onSearch} />
-					</nav>
+				<div className='w-0 lg:w-68 md:w-48'>
+				</div>
 
-					<div className="mt-7 flex items-center gap-6 xl:mt-0">
-						{/* <ThemeToggler /> */}
-
+				<div className="flex items-center lg:ml-auto max-lg:w-full">
+					<div className="text-2xl font-bold text-fta-primary-400 pl-0 pr-4 md:px-4">
 						<CartIcon />
-
-						<Link
-							href="/auth/login"
-							className="text-regular font-medium text-waterloo hover:text-primary"
-						>
-							Login
-						</Link>
-
-						<Link
-							href="/auth/signup"
-							className="flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out bg-fta-primary-400 hover:bg-fta-primary-500"
-						>
-							Sign Up 🔥
-						</Link>
+					</div>
+					{
+						islogin ? (
+							<div className='pl-4 pr-2 md:px-4'>
+								<Avatar size={32} style={{ backgroundColor: '#8d1a25' }}>
+									R
+								</Avatar>
+							</div>
+						) : (
+							<Link href="/auth/signin">
+								<div className="text-sm md:text-md font-bold text-fta-primary-400 pl-4 pr-2 md:px-4">
+									Sign in
+								</div>
+							</Link>
+						)
+					}
+					<div onClick={showDrawer} className="lg:hidden text-3xl font-bold ml-auto">
+						<MenuUnfoldOutlined />
 					</div>
 				</div>
+
+				<div className="flex lg:w-96 w-full lg:pt-0 pt-2">
+					<div className="flex w-full max-xl:w-full bg-gray-100 px-3 py-2 rounded outline outline-transparent focus-within:outline-fta-primary-500 focus-within:bg-transparent">
+						<input
+							type="text"
+							placeholder="Search something..."
+							className="w-full text-sm bg-transparent rounded outline-none pr-2"
+						/>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px" className="cursor-pointer fill-gray-400">
+							<path
+								d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z"
+							></path>
+						</svg>
+					</div>
+				</div>
+
+				<Drawer
+					title="FingerTipArtistry"
+					placement={"left"}
+					closable={false}
+					onClose={onClose}
+					open={open}
+					width={280}
+					key={"left"}
+					footer="https://ftanails.com"
+				>
+					<button
+						id="toggleClose"
+						onClick={onClose}
+						className="fixed top-4 right-4 z-[1001] rounded-full bg-white p-3">
+						<svg xmlns="http://www.w3.org/2000/svg" className="w-4 fill-black" viewBox="0 0 320.591 320.591">
+							<path d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z" />
+							<path d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z" />
+						</svg>
+					</button>
+
+					{
+						islogin ? (
+							<>
+							<div className='fixed top-0 left-52 z-[1001] p-3'>
+								<Avatar size={32} shape="square" style={{ backgroundColor: '#8d1a25' }}>
+									R
+								</Avatar>
+							</div>
+							<Link href="/my/Profile">
+									<div onClick={onLogin} className='border-b text-lg border-gray-200 pb-4 mb-4'>
+										Profile
+									</div>
+								</Link>
+							</>
+						) : (
+							<>
+								<Link href="/auth/signin">
+									<div onClick={onLogin} className='border-b text-lg border-gray-200 pb-4 mb-4'>
+										Sign in
+									</div>
+								</Link>
+								<Link href="/auth/signup">
+									<div onClick={onLogin} className='border-b text-lg border-gray-200 pb-4 mb-4'>
+										Sign up
+									</div>
+								</Link>
+							</>
+						)
+					}
+				</Drawer>
 			</div>
 		</header>
 	);
 };
-
-// w-full delay-300
-
-export default Header;

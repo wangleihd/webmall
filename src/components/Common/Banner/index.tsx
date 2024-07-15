@@ -9,27 +9,19 @@ export default function BannerInIndex({ banners }: { banners: Banner[] }) {
 
 	return (
 		<div className="relative w-full h-auto bg-fta-primary-50 flex flex-col md:flex-row">
-			<div className="md:w-3/5 relative h-64 md:h-auto">
-				<Image
-					src="/products/banner.jpg"
-					alt="Upgrade Your Wardrobe"
-					layout="fill"
-					objectFit="cover"
-					className="z-0"
-				/>
-			</div>
-			{/* 文字和按钮 */}
-			<div className="md:w-2/5 p-4 lg:p-24 flex flex-col z-10">
-				<h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">
-					Upgrade Your Wardrobe With Our Collection
-				</h1>
-				<p className="text-base md:text-lg lg:text-xl mb-4">
-					Discover the latest trends and styles to enhance your fashion sense. Browse through our exclusive collection and find the perfect fit for every occasion.
-				</p>
-				<div className="space-x-4">
-					<button className="text-white w-full lg:w-1/3 bg-fta-primary-400 hover:bg-fta-primary-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-4 py-2 text-center">
-						Sign Up
-					</button>
+			<div className="w-full font-[sans-serif]">
+				<div className="grid md:grid-cols-2 items-center md:max-h-[475px] overflow-hidden">
+					<div className="p-8">
+						<h1 className="sm:text-4xl text-2xl font-bold text-fta-blake">Readymadeui <span className="text-fta-primary-300">Jumbotron Design</span></h1>
+						<p className="mt-4 text-sm text-fta-blake1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nuncet
+							tempus blandit, metus mi consectetur nibh, a pharetra felis turpis vitae ligula. Etiam laoreet velit nec neque
+							ultrices, non consequat mauris tincidunt.</p>
+						<p className="mt-2 text-sm text-fta-blake1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nuncet
+							tempus blandit, metus mi consectetur nibh.</p>
+						<button type="button"
+							className="px-6 py-3 mt-8 rounded-md text-white text-sm tracking-wider border-none outline-none bg-fta-primary-300 hover:bg-fta-primary-500">Sign Up</button>
+					</div>
+					<img src="/images/banner/banner2.jpg" className="w-full h-full object-cover shrink-0" />
 				</div>
 			</div>
 		</div>

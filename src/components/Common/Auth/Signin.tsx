@@ -13,8 +13,8 @@ export default function Signin() {
   return (
     <>
       {/* <!-- ===== SignIn Form Start ===== --> */}
-      <section className="shadow-solid-2  pb-12.5 pt-32.5 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
-        <div className="relative z-1 mx-auto max-w-c-1016 px-7.5 pb-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
+      <section className="shadow-solid-2  pb-12.5 pt-12.5 lg:pb-25 lg:pt-25 xl:pb-30 xl:pt-30">
+        <div className="relative z-1 mx-auto max-w-c-1016 px-7.5 pb-7.5 lg:px-15 xl:px-20">
 
           <motion.div
             variants={{
@@ -35,7 +35,7 @@ export default function Signin() {
             className="animate_top rounded-lg bg-white px-7.5 pt-7.5 shadow-solid-8 dark:border dark:border-strokedark dark:bg-black xl:px-15 xl:pt-15"
           >
             <h2 className="mb-15 text-center text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
-              Login
+              Sign In
             </h2>
             <div className="flex flex-col">
               <div className="flex items-center gap-8">

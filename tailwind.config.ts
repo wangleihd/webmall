@@ -288,6 +288,12 @@ const config: Config = {
 				},
 			},
 		},
+		purge: {
+			enabled: true,
+			content: [
+				"./src/**/*.{js,jsx,ts,tsx}",
+			],
+		},
 		plugins: [],
 		// plugins: [require("daisyui")],
 	};

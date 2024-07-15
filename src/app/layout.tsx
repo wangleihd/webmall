@@ -22,7 +22,9 @@ export default function RootLayout({
 			<GoogleAnalytics gaId="G-WNPBNMJSN8" />
       <body>
         <Header />
+				<div className="bg-fta-background-50">
           {children}
+				</div>
         <Footer />
 				<SpeedInsights />
       </body>
