@@ -49,7 +49,7 @@ export default function CatagoryListOfDetails() {
 					{categories.map((category) => (
 						<div key={category.id} className="bg-white p-4 rounded shadow mb-4">
 							<h2 className="mt-2 text-xl font-semibold">{category.title}</h2>
-							<p className="text-gray-700">{category.description}</p>
+							<p className="space-y-3 list-disc mt-6 pl-4 text-sm text-gray-500">{category.description}</p>
 						</div>
 					))}
 			</div>

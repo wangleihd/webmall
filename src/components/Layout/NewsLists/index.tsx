@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import useSWR from 'swr'
-import ProductCardOne from '@/components/Common/Products/cardone'
+import ProductCardOne from '@/components/Common/Products/cardtwo'
 import { Product } from '@/types/products'
 
 
@@ -25,7 +25,7 @@ export default function NewsLists() {
       name: "Product 2",
 			title: "Product 5",
       price: 200,
-      imageUrl: "/products/000.jpg",
+      imageUrl: "/products/001.jpg",
       description: "Product 2 description",
       rating: 4.5,
       reviews: 100,
@@ -35,7 +35,7 @@ export default function NewsLists() {
       name: "Product 3",
 			title: "Product 5",
       price: 300,
-      imageUrl: "/products/000.jpg",
+      imageUrl: "/products/002.jpg",
       description: "Product 3 description",
       rating: 4.5,
       reviews: 100,
@@ -45,7 +45,7 @@ export default function NewsLists() {
       name: "Product 4",
 			title: "Product 5",
       price: 400,
-      imageUrl: "/products/000.jpg",
+      imageUrl: "/products/003.jpg",
       description: "Product 4 description",
       rating: 4.5,
       reviews: 100,
@@ -55,7 +55,7 @@ export default function NewsLists() {
       name: "Product 5",
 			title: "Product 5",
       price: 500,
-      imageUrl: "/products/000.jpg",
+      imageUrl: "/products/004.jpg",
       description: "Product 5 description",
       rating: 4.5,
       reviews: 100,
@@ -65,7 +65,7 @@ export default function NewsLists() {
       name: "Product 6",
 			title: "Product 6",
       price: 500,
-      imageUrl: "/products/000.jpg",
+      imageUrl: "/products/005.jpg",
       description: "Product 5 description",
       rating: 4.5,
       reviews: 100,
@@ -109,12 +109,10 @@ export default function NewsLists() {
   const products = productsTest;
 
   return (
-    <div className='my-10'>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
         {products.map((product) => (
           <ProductCardOne key={product.id} product={product} />
         ))}
       </div>
-    </div>
   );
 }

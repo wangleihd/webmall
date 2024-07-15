@@ -6,26 +6,25 @@ import DetailTitle from "../Title";
 
 
 export default function ReviewList({ reviews }: { reviews: Review[] }) {
-	const product = {
-		rating: 4.5,
-		reviewCount: 100,
-
-	}
 	return (
 		<div>
 			<DetailTitle title="Reviews" />
 			<ReviewSummary />
-			<div className="my-4">
+			<Divider />
+			<div className="">
 				<List
 					itemLayout="vertical"
 					dataSource={reviews}
 					renderItem={review => (
 						<List.Item className="border-b pb-4 mb-4">
 							<div className="flex justify-between">
-								<div className="flex items-center ml-1">
-								<Rate disabled defaultValue={review.rating} />
+								<div className="flex items-center">
+									<img src={review.profileImage} alt={review.username} className="w-12 h-12 rounded-full mr-2" />
+									<div>
+										<h3 className="text-sm font-bold">{review.username}</h3>
+										{/* <p className="text-sm text-fta-blake1">CHINA</p> */}
+									</div>
 								</div>
-
 								<div className="flex items-cente">
 									<Button className="flex items-center" type="text" icon={<LikeOutlined className="text-fta-primary-500" />}>
 										{review.likes}
@@ -35,17 +34,25 @@ export default function ReviewList({ reviews }: { reviews: Review[] }) {
 									</Button>
 								</div>
 							</div>
-							<div className="mt-2 ml-1">
-								<div className="mt-2 mb-1 text-gray-700">{review.comment}</div>
-								<p className="mb-4 text-gray-300">{review.createdAt}</p>
-							</div>
-							<div className="flex items-center">
-									<img src={review.profileImage} alt={review.username} className="w-10 h-10 rounded-full mr-2" />
-									<span className="font-bold text-gray-800">{review.username}</span>
+
+							<div className="flex justify-between">
+								<div className="flex items-center ml-1">
+									<div className="w-12"></div>
+									<Rate disabled style={{ fontSize: 16 }} allowHalf defaultValue={review.rating} />
+									<div className="text-gray-700 text-md ml-4">{review.rating}</div>
 								</div>
+								<div className="flex items-center ml-1">
+									<p className="text-gray-300">{review.createdAt}</p>
+								</div>
+							</div>
+
+							<div className="pl-13 py-4">
+								<p className="text-sm text-fta-blake">{review.comment}</p>
+							</div>
 						</List.Item>
 					)}
 				/>
+				<button type="button" className="w-full mt-8 px-4 py-2.5 bg-transparent border border-orange-400 text-gray-800 font-semibold rounded-lg">Read all reviews</button>
 			</div>
 		</div>
 	)

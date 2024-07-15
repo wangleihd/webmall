@@ -22,7 +22,7 @@ export default function ReviewSummary() {
 		<div className="p-4 bg-white rounded-md border-2 border-gray-50">
 			<div className="flex items-center mt-4">
 				<div className="flex flex-col items-center mr-8">
-					<div className="text-4xl font-bold text-fta-blake">
+					<div className="text-4xl font-bold text-fta-primary-600">
 						{reviewSummary.averageRating}
 					</div>
 					<Rate disabled defaultValue={reviewSummary.averageRating} allowHalf />
@@ -37,10 +37,10 @@ export default function ReviewSummary() {
 							<Progress
 								percent={(rating.count / reviewSummary.totalReviews) * 100}
 								showInfo={false}
-								strokeColor={rating.stars === 5 ? '#e962ab' : '#f7cfe3'}
+								strokeColor={rating.stars === 5 ? '#8d1a25' : '#f7cfe3'}
 								className="flex-1 mx-2"
 							/>
-							<span className="text-gray-600 w-12 text-right">{rating.count}</span>
+							<span className="text-fta-primary-600 w-12 text-right">{rating.count}</span>
 						</div>
 					))}
 				</div>

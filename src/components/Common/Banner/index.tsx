@@ -1,5 +1,5 @@
-import { Button } from "antd";
 import Image from "next/image";
+import Link from "next/link";
 type Banner = {
 	imageUrl: string,
 	title: string,
@@ -18,10 +18,12 @@ export default function BannerInIndex({ banners }: { banners: Banner[] }) {
 							ultrices, non consequat mauris tincidunt.</p>
 						<p className="mt-2 text-sm text-fta-blake1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nuncet
 							tempus blandit, metus mi consectetur nibh.</p>
+						<Link href="/auth/signup">
 						<button type="button"
 							className="px-6 py-3 mt-8 rounded-md text-white text-sm tracking-wider border-none outline-none bg-fta-primary-300 hover:bg-fta-primary-500">Sign Up</button>
+						</Link>
 					</div>
-					<img src="/images/banner/banner2.jpg" className="w-full h-full object-cover shrink-0" />
+					<img src="/images/banner/banner2.jpg" className="w-full h-full object-cover shrink-0" alt={"banner"} />
 				</div>
 			</div>
 		</div>

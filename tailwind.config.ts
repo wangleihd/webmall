@@ -8,6 +8,7 @@ const config: Config = {
 	],
 	theme: {
 		fontFamily: {
+			sans: ['Roboto', 'Arial', 'sans-serif'],
 			inter: ["sans-serif"],
 		},
 		extend: {
@@ -287,12 +288,6 @@ const config: Config = {
 					lg: '0.5rem',
 				},
 			},
-		},
-		purge: {
-			enabled: true,
-			content: [
-				"./src/**/*.{js,jsx,ts,tsx}",
-			],
 		},
 		plugins: [],
 		// plugins: [require("daisyui")],

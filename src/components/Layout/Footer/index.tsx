@@ -5,387 +5,187 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <>
-      <footer className="border-t border-stroke bg-fta-background-200">
-        <div className="mx-auto max-w-c-1440 px-4 md:px-8 2xl:px-0">
-          {/* <!-- Footer Top --> */}
-          <div className="py-10 lg:py-15">
-            <div className="flex flex-wrap gap-8 lg:justify-between lg:gap-0">
-              <motion.div
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: -20,
-                  },
+		<footer className="font-sans tracking-wide bg-fta-background-500 text-fta-primary-500 after:first:last:px-8 py-12">
+      <div className="px-4 md:px-8 2xl:px-0 relative mx-auto max-w-c-1440 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
+        <div>
+          <a href='javascript:void(0)'><img src="/images/logo/logo.png" alt="logo" className='w-44' /></a>
 
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                  },
-                }}
-                initial="hidden"
-                whileInView="visible"
-                transition={{ duration: 1, delay: 0.5 }}
-                viewport={{ once: true }}
-                className="animate_top w-1/2 lg:w-1/4"
-              >
-                <a href="index.html" className="relative">
-                  <Image
-                    width={280}
-                    height={100}
-                    src="/images/logo/logo.png"
-                    alt="Logo"
-                    className="dark:hidden"
-                  />
-                  <Image
-                    width={160}
-                    height={50}
-                    src="/images/logo/logo.png"
-                    alt="Logo"
-                    className="hidden dark:block"
-                  />
-                </a>
-
-                <p className="mb-10 mt-5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-
-                <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">
-                  contact
-                </p>
-                <a
-                  href="#"
-                  className="text-itemtitle font-medium text-black dark:text-white"
-                >
-                  FingertipArtistry@gmail.com
-                </a>
-              </motion.div>
-
-              <div className="flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-0 lg:w-2/3 xl:w-7/12">
-                <motion.div
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: -20,
-                    },
-
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                    },
-                  }}
-                  initial="hidden"
-                  whileInView="visible"
-                  transition={{ duration: 1, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="animate_top"
-                >
-                  <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
-                    Quick Links
-                  </h4>
-
-                  <ul>
-                    <li>
-                      <a
-                        href="/"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        Home
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        Product
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        Careers
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        Pricing
-                      </a>
-                    </li>
-                  </ul>
-                </motion.div>
-
-                <motion.div
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: -20,
-                    },
-
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                    },
-                  }}
-                  initial="hidden"
-                  whileInView="visible"
-                  transition={{ duration: 1, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="animate_top"
-                >
-                  <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
-                    Support
-                  </h4>
-
-                  <ul>
-                    <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        Company
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        Press media
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        Our Blog
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        Contact Us
-                      </a>
-                    </li>
-                  </ul>
-                </motion.div>
-
-                <motion.div
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: -20,
-                    },
-
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                    },
-                  }}
-                  initial="hidden"
-                  whileInView="visible"
-                  transition={{ duration: 1, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="animate_top"
-                >
-                  <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
-                    Newsletter
-                  </h4>
-                  <p className="mb-4 w-[90%]">
-                    Subscribe to receive future updates
-                  </p>
-                </motion.div>
-              </div>
-            </div>
-          </div>
-          {/* <!-- Footer Top --> */}
-
-          {/* <!-- Footer Bottom --> */}
-          <div className="flex flex-col flex-wrap items-center justify-center gap-5 border-t border-stroke py-7 dark:border-strokedark lg:flex-row lg:justify-between lg:gap-0">
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top"
-            >
-              <ul className="flex items-center gap-8">
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    English
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    Support
-                  </a>
-                </li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top"
-            >
-              <p>
-                &copy; {new Date().getFullYear()} FTANails. All rights reserved
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top"
-            >
-              <ul className="flex items-center gap-5">
-                <li>
-                  <a href="#" aria-label="social icon">
-                    <svg
-                      className="fill-[#D1D8E0] transition-all duration-300 hover:fill-primary"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g clipPath="url(#clip0_48_1499)">
-                        <path
-                          d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z"
-                          fill=""
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_48_1499">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" aria-label="social icon">
-                    <svg
-                      className="fill-[#D1D8E0] transition-all duration-300 hover:fill-primary"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g clipPath="url(#clip0_48_1502)">
-                        <path
-                          d="M22.162 5.65593C21.3985 5.99362 20.589 6.2154 19.76 6.31393C20.6337 5.79136 21.2877 4.96894 21.6 3.99993C20.78 4.48793 19.881 4.82993 18.944 5.01493C18.3146 4.34151 17.4803 3.89489 16.5709 3.74451C15.6615 3.59413 14.7279 3.74842 13.9153 4.18338C13.1026 4.61834 12.4564 5.30961 12.0771 6.14972C11.6978 6.98983 11.6067 7.93171 11.818 8.82893C10.1551 8.74558 8.52832 8.31345 7.04328 7.56059C5.55823 6.80773 4.24812 5.75098 3.19799 4.45893C2.82628 5.09738 2.63095 5.82315 2.63199 6.56193C2.63199 8.01193 3.36999 9.29293 4.49199 10.0429C3.828 10.022 3.17862 9.84271 2.59799 9.51993V9.57193C2.59819 10.5376 2.93236 11.4735 3.54384 12.221C4.15532 12.9684 5.00647 13.4814 5.95299 13.6729C5.33661 13.84 4.6903 13.8646 4.06299 13.7449C4.32986 14.5762 4.85 15.3031 5.55058 15.824C6.25117 16.345 7.09712 16.6337 7.96999 16.6499C7.10247 17.3313 6.10917 17.8349 5.04687 18.1321C3.98458 18.4293 2.87412 18.5142 1.77899 18.3819C3.69069 19.6114 5.91609 20.2641 8.18899 20.2619C15.882 20.2619 20.089 13.8889 20.089 8.36193C20.089 8.18193 20.084 7.99993 20.076 7.82193C20.8949 7.2301 21.6016 6.49695 22.163 5.65693L22.162 5.65593Z"
-                          fill=""
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_48_1502">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" aria-label="social icon">
-                    <svg
-                      className="fill-[#D1D8E0] transition-all duration-300 hover:fill-primary"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g clipPath="url(#clip0_48_1505)">
-                        <path
-                          d="M6.94 5.00002C6.93974 5.53046 6.72877 6.03906 6.35351 6.41394C5.97825 6.78883 5.46944 6.99929 4.939 6.99902C4.40857 6.99876 3.89997 6.78779 3.52508 6.41253C3.1502 6.03727 2.93974 5.52846 2.94 4.99802C2.94027 4.46759 3.15124 3.95899 3.5265 3.5841C3.90176 3.20922 4.41057 2.99876 4.941 2.99902C5.47144 2.99929 5.98004 3.21026 6.35492 3.58552C6.72981 3.96078 6.94027 4.46959 6.94 5.00002ZM7 8.48002H3V21H7V8.48002ZM13.32 8.48002H9.34V21H13.28V14.43C13.28 10.77 18.05 10.43 18.05 14.43V21H22V13.07C22 6.90002 14.94 7.13002 13.28 10.16L13.32 8.48002Z"
-                          fill=""
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_48_1505">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" aria-label="social icon">
-                    <svg
-                      className="fill-[#D1D8E0] transition-all duration-300 hover:fill-primary"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g clipPath="url(#clip0_48_1508)">
-                        <path d="M7.443 5.3501C8.082 5.3501 8.673 5.4001 9.213 5.5481C9.70301 5.63814 10.1708 5.82293 10.59 6.0921C10.984 6.3391 11.279 6.6861 11.475 7.1311C11.672 7.5761 11.77 8.1211 11.77 8.7141C11.77 9.4071 11.623 10.0001 11.279 10.4451C10.984 10.8911 10.492 11.2861 9.902 11.5831C10.738 11.8311 11.377 12.2761 11.77 12.8691C12.164 13.4631 12.41 14.2051 12.41 15.0461C12.41 15.7391 12.262 16.3321 12.016 16.8271C11.77 17.3221 11.377 17.7671 10.934 18.0641C10.4528 18.3825 9.92084 18.6165 9.361 18.7561C8.771 18.9051 8.181 19.0041 7.591 19.0041H1V5.3501H7.443ZM7.049 10.8901C7.59 10.8901 8.033 10.7421 8.377 10.4951C8.721 10.2481 8.869 9.8021 8.869 9.2581C8.869 8.9611 8.819 8.6641 8.721 8.4671C8.623 8.2691 8.475 8.1201 8.279 7.9721C8.082 7.8731 7.885 7.7741 7.639 7.7251C7.393 7.6751 7.148 7.6751 6.852 7.6751H4V10.8911H7.05L7.049 10.8901ZM7.197 16.7281C7.492 16.7281 7.787 16.6781 8.033 16.6291C8.28138 16.5819 8.51628 16.4805 8.721 16.3321C8.92139 16.1873 9.08903 16.002 9.213 15.7881C9.311 15.5411 9.41 15.2441 9.41 14.8981C9.41 14.2051 9.213 13.7101 8.82 13.3641C8.426 13.0671 7.885 12.9191 7.246 12.9191H4V16.7291H7.197V16.7281ZM16.689 16.6781C17.082 17.0741 17.672 17.2721 18.459 17.2721C19 17.2721 19.492 17.1241 19.885 16.8771C20.279 16.5801 20.525 16.2831 20.623 15.9861H23.033C22.639 17.1731 22.049 18.0141 21.263 18.5581C20.475 19.0531 19.541 19.3501 18.41 19.3501C17.6864 19.3523 16.9688 19.2179 16.295 18.9541C15.6887 18.7266 15.148 18.3529 14.721 17.8661C14.2643 17.4107 13.9267 16.8498 13.738 16.2331C13.492 15.5901 13.393 14.8981 13.393 14.1061C13.393 13.3641 13.492 12.6721 13.738 12.0281C13.9745 11.4082 14.3245 10.8378 14.77 10.3461C15.213 9.9011 15.754 9.5061 16.344 9.2581C17.0007 8.99416 17.7022 8.85969 18.41 8.8621C19.246 8.8621 19.984 9.0111 20.623 9.3571C21.263 9.7031 21.754 10.0991 22.148 10.6931C22.5499 11.2636 22.8494 11.8998 23.033 12.5731C23.131 13.2651 23.18 13.9581 23.131 14.7491H16C16 15.5411 16.295 16.2831 16.689 16.6791V16.6781ZM19.787 11.4841C19.443 11.1381 18.902 10.9401 18.262 10.9401C17.82 10.9401 17.475 11.0391 17.18 11.1871C16.885 11.3361 16.689 11.5341 16.492 11.7321C16.311 11.9234 16.1912 12.1643 16.148 12.4241C16.098 12.6721 16.049 12.8691 16.049 13.0671H20.475C20.377 12.3251 20.131 11.8311 19.787 11.4841V11.4841ZM15.459 6.2901H20.967V7.6261H15.46V6.2901H15.459Z" />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_48_1508">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
-          {/* <!-- Footer Bottom --> */}
+          <ul className="mt-10 flex space-x-5">
+            <li>
+              <a href='javascript:void(0)'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="fill-fta-primary-600 hover:fill-white w-7 h-7"
+                  viewBox="0 0 24 24">
+                  <path fill-rule="evenodd"
+                    d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7v-7h-2v-3h2V8.5A3.5 3.5 0 0 1 15.5 5H18v3h-2a1 1 0 0 0-1 1v2h3v3h-3v7h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href='javascript:void(0)'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                  className="fill-fta-primary-600 hover:fill-white w-7 h-7" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd"
+                    d="M21 5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5zm-2.5 8.2v5.3h-2.79v-4.93a1.4 1.4 0 0 0-1.4-1.4c-.77 0-1.39.63-1.39 1.4v4.93h-2.79v-8.37h2.79v1.11c.48-.78 1.47-1.3 2.32-1.3 1.8 0 3.26 1.46 3.26 3.26zM6.88 8.56a1.686 1.686 0 0 0 0-3.37 1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 1.57v8.37H5.5v-8.37h2.77z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href='javascript:void(0)'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                  className="fill-fta-primary-600 hover:fill-white w-7 h-7" viewBox="0 0 24 24">
+                  <path
+                    d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm0-1.8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm5.85-.225a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 4.8c-2.227 0-2.59.006-3.626.052-.706.034-1.18.128-1.618.299a2.59 2.59 0 0 0-.972.633 2.601 2.601 0 0 0-.634.972c-.17.44-.265.913-.298 1.618C4.805 9.367 4.8 9.714 4.8 12c0 2.227.006 2.59.052 3.626.034.705.128 1.18.298 1.617.153.392.333.674.632.972.303.303.585.484.972.633.445.172.918.267 1.62.3.993.047 1.34.052 3.626.052 2.227 0 2.59-.006 3.626-.052.704-.034 1.178-.128 1.617-.298.39-.152.674-.333.972-.632.304-.303.485-.585.634-.972.171-.444.266-.918.299-1.62.047-.993.052-1.34.052-3.626 0-2.227-.006-2.59-.052-3.626-.034-.704-.128-1.18-.299-1.618a2.619 2.619 0 0 0-.633-.972 2.595 2.595 0 0 0-.972-.634c-.44-.17-.914-.265-1.618-.298-.993-.047-1.34-.052-3.626-.052ZM12 3c2.445 0 2.75.009 3.71.054.958.045 1.61.195 2.185.419A4.388 4.388 0 0 1 19.49 4.51c.457.45.812.994 1.038 1.595.222.573.373 1.227.418 2.185.042.96.054 1.265.054 3.71 0 2.445-.009 2.75-.054 3.71-.045.958-.196 1.61-.419 2.185a4.395 4.395 0 0 1-1.037 1.595 4.44 4.44 0 0 1-1.595 1.038c-.573.222-1.227.373-2.185.418-.96.042-1.265.054-3.71.054-2.445 0-2.75-.009-3.71-.054-.958-.045-1.61-.196-2.185-.419A4.402 4.402 0 0 1 4.51 19.49a4.414 4.414 0 0 1-1.037-1.595c-.224-.573-.374-1.227-.419-2.185C3.012 14.75 3 14.445 3 12c0-2.445.009-2.75.054-3.71s.195-1.61.419-2.185A4.392 4.392 0 0 1 4.51 4.51c.45-.458.994-.812 1.595-1.037.574-.224 1.226-.374 2.185-.419C9.25 3.012 9.555 3 12 3Z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href='javascript:void(0)'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                  className="fill-fta-primary-600 hover:fill-white w-7 h-7" viewBox="0 0 24 24">
+                  <path
+                    d="M22.92 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.83 4.5 17.72 4 16.46 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98-3.56-.18-6.73-1.89-8.84-4.48-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.9 20.29 6.16 21 8.58 21c7.88 0 12.21-6.54 12.21-12.21 0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
-      </footer>
+
+        <div>
+          <h4 className="text-fta-primary-800 font-semibold text-lg relative max-sm:cursor-pointer">Services <svg
+            xmlns="http://www.w3.org/2000/svg" width="16px" height="16px"
+            className="sm:hidden absolute right-0 top-1 fill-fta-primary-500" viewBox="0 0 24 24">
+            <path
+              d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+              data-name="16" data-original="#000000"></path>
+          </svg>
+          </h4>
+
+          <ul className="mt-6 space-y-5">
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Web Development</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Pricing</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Support</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Client Portal</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Resources</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-fta-primary-800 font-semibold text-lg relative max-sm:cursor-pointer">Platforms <svg
+            xmlns="http://www.w3.org/2000/svg" width="16px" height="16px"
+            className="sm:hidden absolute right-0 top-1 fill-fta-primary-500" viewBox="0 0 24 24">
+            <path
+              d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+              data-name="16" data-original="#000000"></path>
+          </svg>
+          </h4>
+          <ul className="space-y-5 mt-6 max-sm:hidden">
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Hubspot</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Integration Services</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Marketing Glossar</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>UIPath</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-fta-primary-800 font-semibold text-lg relative max-sm:cursor-pointer">Company <svg
+            xmlns="http://www.w3.org/2000/svg" width="16px" height="16px"
+            className="sm:hidden absolute right-0 top-1 fill-fta-primary-500" viewBox="0 0 24 24">
+            <path
+              d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+              data-name="16" data-original="#000000"></path>
+          </svg>
+          </h4>
+
+          <ul className="space-y-5 mt-6 max-sm:hidden">
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>About us</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Careers</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Blog</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Portfolio</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Events</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-fta-primary-800 font-semibold text-lg relative max-sm:cursor-pointer">Additional <svg
+            xmlns="http://www.w3.org/2000/svg" width="16px" height="16px"
+            className="sm:hidden absolute right-0 top-1 fill-fta-primary-500" viewBox="0 0 24 24">
+            <path
+              d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+              data-name="16" data-original="#000000"></path>
+          </svg>
+          </h4>
+
+          <ul className="space-y-5 mt-6 max-sm:hidden">
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>FAQ</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Partners</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Sitemap</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Contact</a>
+            </li>
+            <li>
+              <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>News</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr className="my-10 border-fta-background-300" />
+
+      <div className="px-4 md:px-8 2xl:px-0 relative mx-auto max-w-c-1440 flex flex-wrap max-md:flex-col gap-4">
+        <ul className="md:flex md:space-x-6 max-md:space-y-2">
+          <li>
+            <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Terms of Service</a>
+          </li>
+          <li>
+            <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Privacy Policy</a>
+          </li>
+          <li>
+            <a href='javascript:void(0)' className='hover:text-fta-primary-800 text-fta-primary-700 text-sm'>Security</a>
+          </li>
+        </ul>
+
+        <p className='text-fta-primary-700 text-sm md:ml-auto'>Copyright © 2024<a href='https://ftanails.com/'
+          target='_blank' className="hover:underline mx-1">FTAnails</a>All Rights Reserved.</p>
+      </div>
+
+    </footer>
+
     </>
   );
 };
