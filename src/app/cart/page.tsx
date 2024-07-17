@@ -7,7 +7,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from '@/components/Common/pay/CheckoutForm';
 import CartListItem from '@/components/Common/CartListItem';
 import '@/styles/pay.css';
-import ShoppingCartList from '@/components/Common/ShoppingCartList';
+import ShoppingCartList from '@/components/Common/ShoppingCartList/one';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
@@ -42,8 +42,7 @@ export default function Cart() {
 	};
 
 	return (
-		<div className="relative mx-auto max-w-c-1440 my-5 items-center justify-between align-items:flex-end px-4 md:px-8 2xl:px-0">
-
+		<div className="relative mx-auto max-w-c-1280 py-5 items-center justify-between align-items:flex-end px-4 md:px-8 2xl:px-0">
 			{items.length === 0 ? (
 				<div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
 					<h1 className="text-2xl mb-4">Shopping Cart</h1>
