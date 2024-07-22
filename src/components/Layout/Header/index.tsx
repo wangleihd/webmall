@@ -47,27 +47,27 @@ export default function Header() {
 					className="hidden max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:h-full max-lg:bg-white max-lg:z-50 transition-transform duration-300 transform lg:flex lg:ml-14 lg:gap-x-5">
 					<ul className="lg:flex max-lg:space-y-8 max-lg:p-6">
 						<li className="max-lg:border-b max-lg:py-3 px-3">
-							<a href="javascript:void(0)" className="lg:hover:text-[#007bff] text-[#007bff] block font-semibold text-[15px]">
+							<a href="/" className="lg:hover:text-[#007bff] text-[#007bff] block font-semibold text-[15px]">
 								Home
 							</a>
 						</li>
 						<li className="max-lg:border-b max-lg:py-3 px-3">
-							<a href="javascript:void(0)" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
+							<a href="/" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
 								Team
 							</a>
 						</li>
 						<li className="max-lg:border-b max-lg:py-3 px-3">
-							<a href="javascript:void(0)" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
+							<a href="/" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
 								Feature
 							</a>
 						</li>
 						<li className="max-lg:border-b max-lg:py-3 px-3">
-							<a href="javascript:void(0)" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
+							<a href="/" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
 								Blog
 							</a>
 						</li>
 						<li className="max-lg:border-b max-lg:py-3 px-3">
-							<a href="javascript:void(0)" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
+							<a href="/" className="lg:hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]">
 								About
 							</a>
 						</li>

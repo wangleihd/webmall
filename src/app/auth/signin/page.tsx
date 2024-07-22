@@ -1,13 +1,17 @@
+"use strict"
 import Signin from "@/components/Common/Auth/Signin";
 import { Metadata } from "next";
 
+
 export const metadata: Metadata = {
-  title: "Login Page - Solid SaaS Boilerplate",
+  title: "Sign in Page - FTANAILS",
   description: "This is Login page for Startup Pro",
   // other metadata
 };
 
-const SigninPage = () => {
+
+export default function SigninPage () {
+
   return (
     <>
       <Signin />
@@ -15,4 +19,3 @@ const SigninPage = () => {
   );
 };
 
-export default SigninPage;

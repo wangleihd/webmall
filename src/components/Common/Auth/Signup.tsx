@@ -69,7 +69,7 @@ export default function Signup() {
 							<div className="flex items-center mt-8">
 								<input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 shrink-0 rounded" />
 								<label className="ml-3 block text-sm">
-									I accept the <a href="javascript:void(0);" className="text-fta-primary-400 font-semibold hover:underline ml-1">Terms and Conditions</a>
+									I accept the <a href="/;" className="text-fta-primary-400 font-semibold hover:underline ml-1">Terms and Conditions</a>
 								</label>
 							</div>
 

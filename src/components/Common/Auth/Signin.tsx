@@ -1,26 +1,25 @@
 "use client";
 import { Divider } from "antd";
+import { getCaptcha } from "@/apis/auth";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Signup() {
-	const [data, setData] = useState({
-		lastName: "",
-		email: "",
-		password: "",
-	});
+export default function Signin() {
+	const [data, setData] = useState<{ picPath?: string } | null>(null);
+	useEffect(() => {
+		const fetchData = async () => {
+			const response = await getCaptcha();
+			setData(response.data);
+		};
+		fetchData()
+	}, []);
 
 	return (
 		<>
-			{/* <!-- ===== SignUp Form Start ===== --> */}
 			<section className="py-4 md:py-20">
 				<div className="font-[sans-serif] relative">
-					{/* <div className="h-[240px] font-[sans-serif]">
-						<img src="https://readymadeui.com/cardImg.webp" alt="Banner Image" className="w-full h-full object-cover" />
-					</div> */}
-
 					<div className="relative m-4">
 						<form className="bg-white max-w-xl w-full mx-auto shadow-md p-4 md:p-16 rounded-2xl">
 							<div className="mb-12">
@@ -37,8 +36,8 @@ export default function Signup() {
 												<path d="M0 512h512V0H0Z" data-original="#000000"></path>
 											</clipPath>
 										</defs>
-										<g clip-path="url(#a)" transform="matrix(1.33 0 0 -1.33 0 682.667)">
-											<path fill="none" stroke-miterlimit="10" stroke-width="40" d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z" data-original="#000000"></path>
+										<g clipPath="url(#a)" transform="matrix(1.33 0 0 -1.33 0 682.667)">
+											<path fill="none" strokeMiterlimit="10" strokeWidth="40" d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z" data-original="#000000"></path>
 											<path d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z" data-original="#000000"></path>
 										</g>
 									</svg>
@@ -55,30 +54,41 @@ export default function Signup() {
 								</div>
 							</div>
 
+							<div className="mt-8">
+								<label className="text-gray-800 text-xs block mb-2">Captcha</label>
+								<div className="flex">
+									<div className="relative flex items-center">
+										<input name="captcha" type="text" required className="w-full bg-transparent text-sm text-gray-800 border-b border-gray-300 focus:border-fta-primary-400 px-2 py-3 outline-none" placeholder="Enter captcha" />
+									</div>
+									<div className="pl-4">
+										{data?.picPath && <Image src={data.picPath} alt="Captcha" width={100} height={40} />}
+									</div>
+								</div>
+							</div>
+
 							<div className="flex items-center mt-8">
 								<input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 shrink-0 rounded bg-fta-primary-500" />
 								<label className="ml-3 block text-sm">
-									I accept the <a href="javascript:void(0);" className="text-fta-primary-400 font-semibold hover:underline ml-1">Terms and Conditions</a>
+									I accept the <a href="/" className="text-fta-primary-400 font-semibold hover:underline ml-1">Terms and Conditions</a>
 								</label>
 							</div>
 
 							<div className="mt-8">
 								<button type="button" className="w-full shadow-xl py-2.5 px-5 text-sm font-semibold tracking-wider rounded-md text-white bg-fta-primary-500 hover:bg-fta-primary-400 focus:outline-none transition-all">
-									Register
+									Sign in
 								</button>
 							</div>
-								<div className="pt-10">
+							<div className="pt-10">
 								<Divider><span className="text-gray-800 text-sm mt-8 text-center"> New to FTAnails? </span></Divider>
-									<Link href="/auth/signup">
-										<p className="border-2 border-fta-background-200 p-1 rounded-md text-fta-primary-400 text-center font-semibold hover:underline ml-1 border-spacing-1">Create you FTAnails account</p>
-									</Link>
-								</div>
+								<Link href="/auth/signup">
+									<p className="border-2 border-fta-background-200 p-1 rounded-md text-fta-primary-400 text-center font-semibold hover:underline ml-1 border-spacing-1">Create your FTAnails account</p>
+								</Link>
+							</div>
 						</form>
 					</div>
 				</div>
-
 			</section>
-			{/* <!-- ===== SignUp Form End ===== --> */}
+			{/* <!-- ===== SignIn Form End ===== --> */}
 		</>
 	);
-};
+}
